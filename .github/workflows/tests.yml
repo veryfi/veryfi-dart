@@ -12,7 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
@@ -20,17 +19,12 @@ jobs:
       
       - name: Install dependencies
         run: flutter pub get
-
+        
       - name: Run tests
         run: flutter test --coverage
-        
-      - name: Yarn lcov2badge
+
+      - name: check code coverage
         run: |
-          npm install yarn -g
-          yarn
-          yarn add lcov2badge
-            
-      - name: Generate coverage badge
-        run: | 
           cd .github/metrics/
-          node coverage.js
+          python generate_badge.py
+          cd ../../
