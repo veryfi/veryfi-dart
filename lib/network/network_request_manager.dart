@@ -19,7 +19,7 @@ class NetworkRequestManager {
   final VeryfiCredentials credentials;
   final String apiVersion;
   final baseUrl = 'api.veryfi.com';
-
+  var httpClient = http.Client();
   NetworkRequestManager(this.credentials, this.apiVersion);
 
   /// API request.
@@ -37,21 +37,20 @@ class NetworkRequestManager {
       encodedPath = encodedPath + queryItem + "/";
     }
     final url = Uri.https(baseUrl, encodedPath, queryItems);
-
     switch (method) {
       case HTTPMethod.get:
-        final getResponse = await http.get(url, headers: headers);
+        final getResponse = await httpClient.get(url, headers: headers);
         return processResponse(getResponse);
       case HTTPMethod.post:
-        final postResponse =
-            await http.post(url, headers: headers, body: jsonEncode(body));
+        final postResponse = await httpClient.post(url,
+            headers: headers, body: jsonEncode(body));
         return processResponse(postResponse);
       case HTTPMethod.put:
         final putResponse =
-            await http.put(url, headers: headers, body: jsonEncode(body));
+            await httpClient.put(url, headers: headers, body: jsonEncode(body));
         return processResponse(putResponse);
       case HTTPMethod.delete:
-        final deleteResponse = await http.delete(url, headers: headers);
+        final deleteResponse = await httpClient.delete(url, headers: headers);
         return processResponse(deleteResponse);
     }
   }
@@ -113,5 +112,11 @@ class NetworkRequestManager {
     Hmac hmac = Hmac(sha256, key);
     Digest digest = hmac.convert(messageBytes);
     return base64.encode(digest.bytes);
+  }
+
+  void injectMockHttpClient(http.Client client) {
+    if (Constants.mockHttpForTesting) {
+      httpClient = client;
+    }
   }
 }
