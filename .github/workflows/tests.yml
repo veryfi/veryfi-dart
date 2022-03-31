@@ -32,5 +32,5 @@ jobs:
             
       - name: Generate coverage badge
         run: | 
-          cd metrics/
+          cd .github/metrics/
           node coverage.js
