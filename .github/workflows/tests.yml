@@ -25,11 +25,9 @@ jobs:
       - name: Run tests
         run: flutter test --coverage
         
-      - name: Yarn setup
-        run: | 
-          yarn init
-          yarn add lcov2badge
-          
+      - name: Yarn install
+        run: yarn install 
+            
       - name: Generate coverage badge
         run: | 
           cd .github/metrics/
