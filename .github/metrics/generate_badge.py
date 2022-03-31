@@ -49,7 +49,7 @@ def verify_unit_tests(number):
     print(number)
     if number < 0.85:
         print("Code coverage < 85%")
-        # exit(-1)
+        exit(-1)
 
 
 if __name__ == "__main__":
