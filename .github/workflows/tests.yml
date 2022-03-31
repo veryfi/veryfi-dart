@@ -25,8 +25,8 @@ jobs:
       - name: Run tests
         run: flutter test --coverage
         
-      - name: Yarn install
-        run: yarn install 
+      - name: Yarn lcov2badge
+        run: yarn add lcov2badge
             
       - name: Generate coverage badge
         run: | 
