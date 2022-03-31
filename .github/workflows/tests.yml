@@ -12,7 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: borales/actions-yarn@v2.3.0
       - uses: actions/setup-node@v2
       - uses: subosito/flutter-action@v2
         with:
@@ -26,7 +25,10 @@ jobs:
         run: flutter test --coverage
         
       - name: Yarn lcov2badge
-        run: yarn add lcov2badge
+        run: |
+          npm install yarn -g
+          yarn
+          yarn add lcov2badge
             
       - name: Generate coverage badge
         run: | 
