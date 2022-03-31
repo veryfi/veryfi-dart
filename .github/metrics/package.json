@@ -1,9 +1,0 @@
-{
-  "name": "metrics",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "lcov2badge": "^0.1.2"
-  }
-}
