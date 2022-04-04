@@ -36,7 +36,7 @@ void main() {
       final http.Response response = http.Response(rawResponse, 200);
       final mockClient = MockClient();
       veryfiDart.injectMockHttpClient(mockClient);
-      when(mockClient.get(any, headers: anyNamed("headers")))
+      when(mockClient.get(any, headers: anyNamed('headers')))
           .thenAnswer((_) => Future(() => response));
     }
     await veryfiDart.getDocuments().then(
@@ -55,7 +55,7 @@ void main() {
       final http.Response response = http.Response(rawResponse, 200);
       final mockClient = MockClient();
       veryfiDart.injectMockHttpClient(mockClient);
-      when(mockClient.get(any, headers: anyNamed("headers")))
+      when(mockClient.get(any, headers: anyNamed('headers')))
           .thenAnswer((_) => Future(() => response));
     }
     await veryfiDart.getDocumentById(documentId.toString()).then(
@@ -81,7 +81,7 @@ void main() {
       final mockClient = MockClient();
       veryfiDart.injectMockHttpClient(mockClient);
       when(mockClient.post(any,
-              headers: anyNamed("headers"), body: anyNamed("body")))
+              headers: anyNamed('headers'), body: anyNamed('body')))
           .thenAnswer((_) => Future(() => processResponse));
     }
     await veryfiDart
@@ -106,7 +106,7 @@ void main() {
             http.Response(rawDeleteResponse, 200);
         final mockClient = MockClient();
         veryfiDart.injectMockHttpClient(mockClient);
-        when(mockClient.delete(any, headers: anyNamed("headers")))
+        when(mockClient.delete(any, headers: anyNamed('headers')))
             .thenAnswer((_) => Future(() => deleteResponse));
       }
       await veryfiDart.deleteDocument(documentIdToDelete).then(
@@ -131,7 +131,7 @@ void main() {
       final mockClient = MockClient();
       veryfiDart.injectMockHttpClient(mockClient);
       when(mockClient.put(any,
-              headers: anyNamed("headers"), body: anyNamed("body")))
+              headers: anyNamed('headers'), body: anyNamed('body')))
           .thenAnswer((_) => Future(() => response));
     }
 
@@ -156,7 +156,7 @@ void main() {
       final mockClient = MockClient();
       veryfiDart.injectMockHttpClient(mockClient);
       when(mockClient.post(any,
-              headers: anyNamed("headers"), body: anyNamed("body")))
+              headers: anyNamed('headers'), body: anyNamed('body')))
           .thenAnswer((_) => Future(() => response));
     }
 
@@ -187,7 +187,7 @@ void main() {
       final mockClient = MockClient();
       veryfiDart.injectMockHttpClient(mockClient);
       when(mockClient.post(any,
-              headers: anyNamed("headers"), body: anyNamed("body")))
+              headers: anyNamed('headers'), body: anyNamed('body')))
           .thenAnswer((_) => Future(() => response));
     }
 
@@ -204,7 +204,7 @@ void main() {
   test('Test Exception', () async {
     const errorType = APIError.serverError;
     const statusCode = 500;
-    const response = '{"error": "error}';
+    const response = '{"error": "error"}';
 
     final exception = VeryfiException(errorType, statusCode, response);
     expect(exception.errorType, errorType);
@@ -214,7 +214,7 @@ void main() {
 
   test('Test Bad Credentials', () async {
     final veryfiDart =
-        VeryfiDart("clientId", "clientSecret", "username", "apiKey");
+        VeryfiDart('clientId', 'clientSecret', 'username', 'apiKey');
     await veryfiDart.getDocuments().then(
       (response) {
         assert(false);
@@ -222,5 +222,14 @@ void main() {
     ).catchError((error) {
       assert(true);
     });
+  });
+
+  test('Test Signature', () async {
+    final veryfiDart =
+        VeryfiDart('clientId', 'clientSecret', 'username', 'apiKey');
+    final timestamp = '123456789';
+    final Map<String, dynamic> params = {};
+    final signature = veryfiDart.generateSignature(params, timestamp);
+    assert(signature.isNotEmpty);
   });
 }
