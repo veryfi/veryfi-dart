@@ -5,4 +5,5 @@ library veryfi_dart;
 
 export 'src/veryfi_dart_base.dart';
 
-// TODO: Export any libraries intended for clients of this package.
+export 'package:http/http.dart';
+export 'package:crypto/crypto.dart';
