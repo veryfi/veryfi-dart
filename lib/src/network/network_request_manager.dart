@@ -1,7 +1,7 @@
 //Veryfi imports
-import 'package:veryfi_dart/exception/veryfi_exception.dart';
-import 'package:veryfi_dart/constants/constants.dart';
-import 'package:veryfi_dart/model/veryfi_credentials.dart';
+import 'package:veryfi_dart/src/exception/veryfi_exception.dart';
+import 'package:veryfi_dart/src/constants/constants.dart';
+import 'package:veryfi_dart/src/model/veryfi_credentials.dart';
 
 //Dart imports
 import 'dart:convert';

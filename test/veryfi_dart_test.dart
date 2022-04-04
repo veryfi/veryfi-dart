@@ -1,6 +1,6 @@
 //Veryfi imports
-import 'package:veryfi_dart/constants/constants.dart';
-import 'package:veryfi_dart/exception/veryfi_exception.dart';
+import 'package:veryfi_dart/src/constants/constants.dart';
+import 'package:veryfi_dart/src/exception/veryfi_exception.dart';
 import 'package:veryfi_dart/veryfi_dart.dart';
 import 'veryfi_dart_test.mocks.dart';
 
@@ -16,7 +16,7 @@ import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
 
 //Test imports
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 
 @GenerateMocks([http.Client])
 void main() {

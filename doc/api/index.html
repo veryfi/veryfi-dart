@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="generator" content="made with love by dartdoc 5.0.1">
+  <meta name="generator" content="made with love by dartdoc 4.1.0">
   <meta name="description" content="veryfi_dart API docs, for the Dart programming language.">
   <title>veryfi_dart - Dart API docs</title>
 
@@ -44,103 +44,45 @@
   <div id="dartdoc-main-content" class="main-content">
       
 <section class="desc markdown">
-  <p><img src="https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png" alt="Veryfi Logo"></p>
-<p>Dart module for communicating with the Veryfi OCR API</p>
-<h2 id="installation">Installation</h2>
-<p>Install from <a href="https://pub.dev">https://pub.dev</a>.</p>
-<h2 id="getting-started">Getting Started</h2>
-<h3 id="obtaining-client-id-and-user-keys">Obtaining Client ID and user keys</h3>
-<p>If you don't have an account with Veryfi, please go ahead and register here: <a href="https://hub.veryfi.com/signup/api/">https://hub.veryfi.com/signup/api/</a></p>
-<h3 id="veryfi-dart-client-library">Veryfi Dart Client Library</h3>
-<p>The <strong>veryfi</strong> library can be used to communicate with Veryfi API. All available functionality is described here: <a href="https://veryfi.github.io/veryfi-dart/">https://veryfi.github.io/veryfi-dart/</a></p>
-<p>Below is the sample Dart code using <strong>veryfi</strong> to OCR and extract data from a document:</p>
-<h4 id="import-package">Import package:</h4>
-<pre class="language-dart"><code class="language-dart">import 'package:veryfi_dart/veryfi_dart.dart';
-</code></pre>
-<h4 id="process-a-document-from-file">Process a document from file</h4>
-<pre class="language-dart"><code class="language-dart">Future&lt;void&gt; processDocument() async {
-    String fileName = 'receipt.jpg';
-    File file = File(fileName);
-    Uint8List imageData = file.readAsBytesSync();
-    String fileData = base64Encode(imageData);
-    VeryfiDart client = VeryfiDart(
-        'yourClientId', 'yourClientSecret', 'yourUsername', 'yourApiKey');
+  <!-- 
+This README describes the package. If you publish this package to pub.dev,
+this README's contents appear on the landing page for your package.
 
-    await client.processDocument(fileName, fileData).then(
-      (response) {
-        print('success');
-      },
-    ).catchError((error) {
-      print('error');
-    });
-}
+For information about how to write a good package README, see the guide for
+[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+
+For general information about developing packages, see the Dart guide for
+[creating packages](https://dart.dev/guides/libraries/create-library-packages)
+and the Flutter guide for
+[developing packages and plugins](https://flutter.dev/developing-packages). 
+-->
+<p>TODO: Put a short description of the package here that helps potential users
+know whether this package might be useful for them.</p>
+<h2 id="features">Features</h2>
+<p>TODO: List what your package can do. Maybe include images, gifs, or videos.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>TODO: List prerequisites and provide or point to information on how to
+start using the package.</p>
+<h2 id="usage">Usage</h2>
+<p>TODO: Include short and useful examples for package users. Add longer examples
+to <code>/example</code> folder.</p>
+<pre class="language-dart"><code class="language-dart">const like = 'sample';
 </code></pre>
-<h4 id="update-a-document">Update a document</h4>
-<pre class="language-dart"><code class="language-dart">Future&lt;void&gt; updateDocument() async {
-    VeryfiDart client = VeryfiDart(
-        'yourClientId', 'yourClientSecret', 'yourUsername', 'yourApiKey');
-    final Map&lt;String, dynamic&gt; params = {'notes': 'Test'};
-    await client.updateDocument('123', params).then(
-      (response) {
-        print('success');
-      },
-    ).catchError((error) {
-      print('error');
-    });
-}
-</code></pre>
-<h2 id="release">Release</h2>
-<ol>
-<li>Create new branch for your code</li>
-<li>Change version in <code>constants.dart</code> and <code>pubspec.yaml</code> with the same version.</li>
-<li>Commit changes and push to Github</li>
-<li>Create PR pointing to master branch and add a Veryfi member as a reviewer</li>
-<li>Tag your commit with the new version</li>
-<li>The new version will be accesible through Pub Dev.</li>
-</ol>
-<h2 id="need-help">Need help?</h2>
-<p>If you run into any issue or need help installing or using the library, please contact support@veryfi.com.</p>
-<p>If you found a bug in this library or would like new features added, then open an issue or pull requests against this repo!</p>
-<p>To learn more about Veryfi visit <a href="https://www.veryfi.com/">https://www.veryfi.com/</a></p>
+<h2 id="additional-information">Additional information</h2>
+<p>TODO: Tell users more about the package: where to find more information, how to 
+contribute to the package, how to file issues, what response they can expect 
+from the package authors, and more.</p>
 </section>
 
 
       <section class="summary">
           <h2>Libraries</h2>
         <dl>
-          <dt id="constants">
-  <span class="name"><a href="constants_constants/constants_constants-library.html">constants</a></span> 
-
-</dt>
-<dd> 
-</dd>
-
-          <dt id="network_request_manager">
-  <span class="name"><a href="network_network_request_manager/network_network_request_manager-library.html">network_request_manager</a></span> 
-
-</dt>
-<dd> 
-</dd>
-
-          <dt id="veryfi_credentials">
-  <span class="name"><a href="model_veryfi_credentials/model_veryfi_credentials-library.html">veryfi_credentials</a></span> 
-
-</dt>
-<dd> 
-</dd>
-
           <dt id="veryfi_dart">
   <span class="name"><a href="veryfi_dart/veryfi_dart-library.html">veryfi_dart</a></span> 
 
 </dt>
-<dd> 
-</dd>
-
-          <dt id="veryfi_exception">
-  <span class="name"><a href="exception_veryfi_exception/exception_veryfi_exception-library.html">veryfi_exception</a></span> 
-
-</dt>
-<dd> 
+<dd>Support for doing something awesome. <a href="veryfi_dart/veryfi_dart-library.html">[...]</a>
 </dd>
 
         </dl>
@@ -163,11 +105,7 @@
     <h5 class="hidden-xs"><span class="package-name">veryfi_dart</span> <span class="package-kind">package</span></h5>
     <ol>
       <li class="section-title">Libraries</li>
-      <li><a href="constants_constants/constants_constants-library.html">constants</a></li>
-      <li><a href="network_network_request_manager/network_network_request_manager-library.html">network_request_manager</a></li>
-      <li><a href="model_veryfi_credentials/model_veryfi_credentials-library.html">veryfi_credentials</a></li>
       <li><a href="veryfi_dart/veryfi_dart-library.html">veryfi_dart</a></li>
-      <li><a href="exception_veryfi_exception/exception_veryfi_exception-library.html">veryfi_exception</a></li>
 </ol>
 
   </div>

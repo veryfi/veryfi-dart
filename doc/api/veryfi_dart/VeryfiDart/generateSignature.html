@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the deleteDocument method from the VeryfiDart class, for the Dart programming language.">
-  <title>deleteDocument method - VeryfiDart class - veryfi_dart library - Dart API</title>
+  <meta name="description" content="API docs for the generateSignature method from the VeryfiDart class, for the Dart programming language.">
+  <title>generateSignature method - VeryfiDart class - veryfi_dart library - Dart API</title>
 
 
   
@@ -32,9 +32,9 @@
     <li><a href="../../index.html">veryfi_dart</a></li>
     <li><a href="../../veryfi_dart/veryfi_dart-library.html">veryfi_dart</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart-class.html">VeryfiDart</a></li>
-    <li class="self-crumb">deleteDocument method</li>
+    <li class="self-crumb">generateSignature method</li>
   </ol>
-  <div class="self-name">deleteDocument</div>
+  <div class="self-name">generateSignature</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,32 +45,40 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">deleteDocument</span> method 
+<h1><span class="kind-method">generateSignature</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
-<span class="name ">deleteDocument</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="deleteDocument-param-documentId"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span> <span class="parameter-name">documentId</span></span></li>
+<span class="returntype"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>
+<span class="name ">generateSignature</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="generateSignature-param-params"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">params</span>, </span></li>
+<li><span class="parameter" id="generateSignature-param-timestamp"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span> <span class="parameter-name">timestamp</span></span></li>
 </ol>)
 
-      
+      <div class="features">inherited</div>
 
     </section>
     
 <section class="desc markdown">
-  <p>Delete document.</p>
-<p>Returns a <code>Map</code> containing the response of the DELETE request for the <code>documentId</code>.</p>
+  <p>Generate signature.</p>
+<p>Returns a <a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a> containing the signature from the <code>params</code> and
+current <code>timestamp</code> used to sign the http requests to the Veryfi API.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;Map&lt;String, dynamic&gt;&gt; deleteDocument(String documentId) {
-  return request(HTTPMethod.delete, APIPath.documents, queryItem: documentId);
+  <pre class="language-dart"><code class="language-dart">String generateSignature(Map&lt;String, dynamic&gt; params, String timestamp) {
+  Map&lt;String, dynamic&gt; rawParams = Map&lt;String, dynamic&gt;.from(params);
+  rawParams[&#39;timestamp&#39;] = timestamp;
+  List&lt;int&gt; messageBytes = utf8.encode(jsonEncode(rawParams));
+  List&lt;int&gt; key = base64.decode(credentials.clientSecret);
+  Hmac hmac = Hmac(sha256, key);
+  Digest digest = hmac.convert(messageBytes);
+  return base64.encode(digest.bytes);
 }</code></pre>
 </section>
 
@@ -88,7 +96,7 @@
   <li><a href="../../index.html">veryfi_dart</a></li>
   <li><a href="../../veryfi_dart/veryfi_dart-library.html">veryfi_dart</a></li>
   <li><a href="../../veryfi_dart/VeryfiDart-class.html">VeryfiDart</a></li>
-  <li class="self-crumb">deleteDocument method</li>
+  <li class="self-crumb">generateSignature method</li>
 </ol>
 
 
