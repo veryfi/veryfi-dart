@@ -87,7 +87,7 @@ class NetworkRequestManager {
   /// requests to the Veryfi API using the credentials and the [params].
   Map<String, String> getHeaders(Map<String, dynamic> params) {
     final timestamp = DateTime.now().millisecondsSinceEpoch;
-    final signature = generateSignature(params, timestamp);
+    final signature = generateSignature(params);
     final headers = {
       'User-Agent': 'Veryfi-Dart/${Constants.packageVersion}',
       'Accept': 'application/json',
@@ -102,13 +102,12 @@ class NetworkRequestManager {
 
   /// Generate signature.
   ///
-  /// Returns a [String] containing the signature from the [params] and
-  /// current [timestamp] used to sign the http requests to the Veryfi API.
-  String generateSignature(Map<String, dynamic> params, int timestamp) {
+  /// Returns a [String] containing the signature from the [params]
+  /// used to sign the http requests to the Veryfi API.
+  String generateSignature(Map<String, dynamic> params) {
     Map<String, dynamic> rawParams = Map<String, dynamic>.from(params);
-    rawParams['timestamp'] = timestamp;
     List<int> messageBytes = utf8.encode(jsonEncode(rawParams));
-    List<int> key = base64.decode(credentials.clientSecret);
+    List<int> key = utf8.encode(credentials.clientSecret);
     Hmac hmac = Hmac(sha256, key);
     Digest digest = hmac.convert(messageBytes);
     return base64.encode(digest.bytes);

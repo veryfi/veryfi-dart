@@ -227,9 +227,8 @@ void main() {
   test('Test Signature', () async {
     final veryfiDart =
         VeryfiDart('clientId', 'clientSecret', 'username', 'apiKey');
-    final timestamp = 123456789;
     final Map<String, dynamic> params = {};
-    final signature = veryfiDart.generateSignature(params, timestamp);
+    final signature = veryfiDart.generateSignature(params);
     assert(signature.isNotEmpty);
   });
 }
