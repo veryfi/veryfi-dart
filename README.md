@@ -7,7 +7,7 @@
 Dart module for communicating with the Veryfi OCR API
 
 ## Installation
-Install from https://pub.dev.
+Install from https://pub.dev/packages/veryfi_dart
 
 ## Getting Started
 
