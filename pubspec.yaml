@@ -1,7 +1,7 @@
 name: veryfi_dart
 description: Dart module for communicating with the Veryfi OCR API.
 version: 0.0.1
-# homepage: https://www.example.com
+homepage: https://www.veryfi.com
 
 environment:
   sdk: '>=2.16.2 <3.0.0'
