@@ -72,7 +72,7 @@ requests to the Veryfi API using the credentials and the <code>params</code>.</p
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Map&lt;String, String&gt; getHeaders(Map&lt;String, dynamic&gt; params) {
   final timestamp = DateTime.now().millisecondsSinceEpoch;
-  final signature = generateSignature(params, timestamp.toString());
+  final signature = generateSignature(params);
   final headers = {
     &#39;User-Agent&#39;: &#39;Veryfi-Dart&#47;${Constants.packageVersion}&#39;,
     &#39;Accept&#39;: &#39;application&#47;json&#39;,
@@ -122,20 +122,25 @@ requests to the Veryfi API using the credentials and the <code>params</code>.</p
     <li class="inherited"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
     <li class="section-title"><a href="../../veryfi_dart/VeryfiDart-class.html#instance-methods">Methods</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/addLineItem.html">addLineItem</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/deleteDocument.html">deleteDocument</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/deleteDocumentLineItems.html">deleteDocumentLineItems</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/deleteLineitem.html">deleteLineitem</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/generateSignature.html">generateSignature</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/getDocumentById.html">getDocumentById</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/getDocumentLineItems.html">getDocumentLineItems</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/getDocuments.html">getDocuments</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/getHeaders.html">getHeaders</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/getLineItem.html">getLineItem</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/injectMockHttpClient.html">injectMockHttpClient</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/pathEnumToUrl.html">pathEnumToUrl</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/processDocument.html">processDocument</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/processDocumentFromURL.html">processDocumentFromURL</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/processResponse.html">processResponse</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/request.html">request</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object/toString.html">toString</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/updateDocument.html">updateDocument</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/updateLineItem.html">updateLineItem</a></li>
 
     <li class="section-title inherited"><a href="../../veryfi_dart/VeryfiDart-class.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object/operator_equals.html">operator ==</a></li>
@@ -155,7 +160,7 @@ requests to the Veryfi API using the credentials and the <code>params</code>.</p
 <footer>
   <span class="no-break">
     veryfi_dart
-      0.0.1
+      0.0.2
   </span>
 
   

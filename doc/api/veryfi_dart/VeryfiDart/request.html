@@ -54,10 +54,9 @@
 
 <span class="returntype"><a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
 <span class="name ">request</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="request-param-method"><span class="type-annotation">HTTPMethod</span> <span class="parameter-name">method</span>, </span></li>
-<li><span class="parameter" id="request-param-path"><span class="type-annotation">APIPath</span> <span class="parameter-name">path</span>, </span></li>
+<li><span class="parameter" id="request-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, </span></li>
 <li><span class="parameter" id="request-param-queryItems">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">queryItems</span>, </span></li>
-<li><span class="parameter" id="request-param-body"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">body</span>, </span></li>
-<li><span class="parameter" id="request-param-queryItem"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">queryItem</span>}</span></li>
+<li><span class="parameter" id="request-param-body"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">body</span>}</span></li>
 </ol>)
 
       <div class="features">inherited</div>
@@ -67,7 +66,7 @@
 <section class="desc markdown">
   <p>API request.</p>
 <p>Returns a <code>Map</code> with the response of the http request to the API
-using the <code>method</code> <code>path</code> <code>queryItems</code> <code>body</code> and <code>queryItem</code>
+using the <code>method</code> <code>path</code> <code>queryItems</code> and <code>body</code>.
 to build and perform the request.</p>
 </section>
 
@@ -75,15 +74,10 @@ to build and perform the request.</p>
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;Map&lt;String, dynamic&gt;&gt; request(HTTPMethod method, APIPath path,
-    {Map&lt;String, dynamic&gt;? queryItems,
-    Map&lt;String, dynamic&gt;? body,
-    String? queryItem}) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;Map&lt;String, dynamic&gt;&gt; request(HTTPMethod method, String path,
+    {Map&lt;String, dynamic&gt;? queryItems, Map&lt;String, dynamic&gt;? body}) async {
   final headers = getHeaders(body ?? {});
-  var encodedPath = &quot;api&#47;&quot; + apiVersion + pathEnumToUrl(path);
-  if (queryItem != null &amp;&amp; queryItem != &quot;&quot;) {
-    encodedPath = encodedPath + queryItem + &quot;&#47;&quot;;
-  }
+  var encodedPath = &quot;api&#47;$apiVersion&#47;partner&#47;$path&quot;;
   final url = Uri.https(baseUrl, encodedPath, queryItems);
   switch (method) {
     case HTTPMethod.get:
@@ -140,20 +134,25 @@ to build and perform the request.</p>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
     <li class="section-title"><a href="../../veryfi_dart/VeryfiDart-class.html#instance-methods">Methods</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/addLineItem.html">addLineItem</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/deleteDocument.html">deleteDocument</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/deleteDocumentLineItems.html">deleteDocumentLineItems</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/deleteLineitem.html">deleteLineitem</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/generateSignature.html">generateSignature</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/getDocumentById.html">getDocumentById</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/getDocumentLineItems.html">getDocumentLineItems</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/getDocuments.html">getDocuments</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/getHeaders.html">getHeaders</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/getLineItem.html">getLineItem</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/injectMockHttpClient.html">injectMockHttpClient</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/pathEnumToUrl.html">pathEnumToUrl</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/processDocument.html">processDocument</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/processDocumentFromURL.html">processDocumentFromURL</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/processResponse.html">processResponse</a></li>
     <li class="inherited"><a href="../../veryfi_dart/VeryfiDart/request.html">request</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object/toString.html">toString</a></li>
     <li><a href="../../veryfi_dart/VeryfiDart/updateDocument.html">updateDocument</a></li>
+    <li><a href="../../veryfi_dart/VeryfiDart/updateLineItem.html">updateLineItem</a></li>
 
     <li class="section-title inherited"><a href="../../veryfi_dart/VeryfiDart-class.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object/operator_equals.html">operator ==</a></li>
@@ -173,7 +172,7 @@ to build and perform the request.</p>
 <footer>
   <span class="no-break">
     veryfi_dart
-      0.0.1
+      0.0.2
   </span>
 
   

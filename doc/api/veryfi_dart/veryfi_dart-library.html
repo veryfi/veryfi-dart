@@ -59,6 +59,121 @@
       <h2>Classes</h2>
 
       <dl>
+        <dt id="BaseClient">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/BaseClient-class.html">BaseClient</a></span> 
+
+</dt>
+<dd>
+  The abstract base class for an HTTP client. <a href="https://pub.dev/documentation/http/0.13.4/http/BaseClient-class.html">[...]</a>
+</dd>
+
+        <dt id="BaseRequest">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/BaseRequest-class.html">BaseRequest</a></span> 
+
+</dt>
+<dd>
+  The base class for HTTP requests. <a href="https://pub.dev/documentation/http/0.13.4/http/BaseRequest-class.html">[...]</a>
+</dd>
+
+        <dt id="BaseResponse">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/BaseResponse-class.html">BaseResponse</a></span> 
+
+</dt>
+<dd>
+  The base class for HTTP responses. <a href="https://pub.dev/documentation/http/0.13.4/http/BaseResponse-class.html">[...]</a>
+</dd>
+
+        <dt id="ByteStream">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/ByteStream-class.html">ByteStream</a></span> 
+
+</dt>
+<dd>
+  A stream of chunks of bytes representing a single piece of data. 
+</dd>
+
+        <dt id="Client">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">Client</a></span> 
+
+</dt>
+<dd>
+  The interface for HTTP clients that take care of maintaining persistent
+connections across multiple requests to the same server. <a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">[...]</a>
+</dd>
+
+        <dt id="Digest">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Digest-class.html">Digest</a></span> 
+
+</dt>
+<dd>
+  A message digest as computed by a <code>Hash</code> or <code>HMAC</code> function. 
+</dd>
+
+        <dt id="Hash">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></span> 
+
+</dt>
+<dd>
+  An interface for cryptographic hash functions. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">[...]</a>
+</dd>
+
+        <dt id="Hmac">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hmac-class.html">Hmac</a></span> 
+
+</dt>
+<dd>
+  An implementation of <a href="https://tools.ietf.org/html/rfc2104">keyed-hash method authentication codes</a>. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hmac-class.html">[...]</a>
+</dd>
+
+        <dt id="MultipartFile">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/MultipartFile-class.html">MultipartFile</a></span> 
+
+</dt>
+<dd>
+  A file to be uploaded as part of a <a href="https://pub.dev/documentation/http/0.13.4/http/MultipartRequest-class.html">MultipartRequest</a>. <a href="https://pub.dev/documentation/http/0.13.4/http/MultipartFile-class.html">[...]</a>
+</dd>
+
+        <dt id="MultipartRequest">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/MultipartRequest-class.html">MultipartRequest</a></span> 
+
+</dt>
+<dd>
+  A <code>multipart/form-data</code> request. <a href="https://pub.dev/documentation/http/0.13.4/http/MultipartRequest-class.html">[...]</a>
+</dd>
+
+        <dt id="Request">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/Request-class.html">Request</a></span> 
+
+</dt>
+<dd>
+  An HTTP request where the entire request body is known in advance. 
+</dd>
+
+        <dt id="Response">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/Response-class.html">Response</a></span> 
+
+</dt>
+<dd>
+  An HTTP response where the entire response body is known in advance. 
+</dd>
+
+        <dt id="StreamedRequest">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/StreamedRequest-class.html">StreamedRequest</a></span> 
+
+</dt>
+<dd>
+  An HTTP request where the request body is sent asynchronously after the
+connection has been established and the headers have been sent. <a href="https://pub.dev/documentation/http/0.13.4/http/StreamedRequest-class.html">[...]</a>
+</dd>
+
+        <dt id="StreamedResponse">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/StreamedResponse-class.html">StreamedResponse</a></span> 
+
+</dt>
+<dd>
+  An HTTP response where the response body is received asynchronously after
+the headers have been received. 
+</dd>
+
         <dt id="VeryfiDart">
   <span class="name "><a href="../veryfi_dart/VeryfiDart-class.html">VeryfiDart</a></span> 
 
@@ -72,11 +187,265 @@
 
 
 
+    <section class="summary offset-anchor" id="constants">
+      <h2>Constants</h2>
+
+      <dl class="properties">
+        <dt id="md5" class="constant">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/md5-constant.html">md5</a></span>
+  <span class="signature">&#8594; const <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></span>
+  
+
+</dt>
+<dd>
+  An implementation of the <a href="https://tools.ietf.org/html/rfc1321">MD5</a> hash function. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/md5-constant.html">[...]</a>
+  
+
+  <div>
+    <span class="signature"><code>_MD5._()</code></span>
+  </div>
+</dd>
+
+        <dt id="sha1" class="constant">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha1-constant.html">sha1</a></span>
+  <span class="signature">&#8594; const <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></span>
+  
+
+</dt>
+<dd>
+  An implemention of the <a href="http://tools.ietf.org/html/rfc3174">SHA-1</a> hash function. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha1-constant.html">[...]</a>
+  
+
+  <div>
+    <span class="signature"><code>_Sha1._()</code></span>
+  </div>
+</dd>
+
+        <dt id="sha224" class="constant">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha224-constant.html">sha224</a></span>
+  <span class="signature">&#8594; const <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></span>
+  
+
+</dt>
+<dd>
+  An implementation of the <a href="http://tools.ietf.org/html/rfc6234">SHA-224</a> hash function. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha224-constant.html">[...]</a>
+  
+
+  <div>
+    <span class="signature"><code>_Sha224._()</code></span>
+  </div>
+</dd>
+
+        <dt id="sha256" class="constant">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha256-constant.html">sha256</a></span>
+  <span class="signature">&#8594; const <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></span>
+  
+
+</dt>
+<dd>
+  An implementation of the <a href="http://tools.ietf.org/html/rfc6234">SHA-256</a> hash function. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha256-constant.html">[...]</a>
+  
+
+  <div>
+    <span class="signature"><code>_Sha256._()</code></span>
+  </div>
+</dd>
+
+        <dt id="sha384" class="constant">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha384-constant.html">sha384</a></span>
+  <span class="signature">&#8594; const <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></span>
+  
+
+</dt>
+<dd>
+  An implementation of the <a href="http://tools.ietf.org/html/rfc6234">SHA-384</a> hash function. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha384-constant.html">[...]</a>
+  
+
+  <div>
+    <span class="signature"><code>_Sha384._()</code></span>
+  </div>
+</dd>
+
+        <dt id="sha512" class="constant">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha512-constant.html">sha512</a></span>
+  <span class="signature">&#8594; const <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></span>
+  
+
+</dt>
+<dd>
+  An implementation of the <a href="http://tools.ietf.org/html/rfc6234">SHA-512</a> hash function. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha512-constant.html">[...]</a>
+  
+
+  <div>
+    <span class="signature"><code>_Sha512._()</code></span>
+  </div>
+</dd>
+
+        <dt id="sha512224" class="constant">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha512224-constant.html">sha512224</a></span>
+  <span class="signature">&#8594; const <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></span>
+  
+
+</dt>
+<dd>
+  An implementatino of the <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf">SHA-512/224</a> hash function. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha512224-constant.html">[...]</a>
+  
+
+  <div>
+    <span class="signature"><code>_Sha512224()</code></span>
+  </div>
+</dd>
+
+        <dt id="sha512256" class="constant">
+  <span class="name "><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha512256-constant.html">sha512256</a></span>
+  <span class="signature">&#8594; const <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></span>
+  
+
+</dt>
+<dd>
+  An implementatino of the <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf">SHA-512/256</a> hash function. <a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha512256-constant.html">[...]</a>
+  
+
+  <div>
+    <span class="signature"><code>_Sha512256()</code></span>
+  </div>
+</dd>
+
+      </dl>
+    </section>
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+
+      <dl class="callables">
+        <dt id="delete" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/http/0.13.4/http/delete.html">delete</a></span><span class="signature">(<wbr><span class="parameter" id="delete-param-url"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Uri-class.html">Uri</a></span> <span class="parameter-name">url</span>, </span><span class="parameter" id="delete-param-headers">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">headers</span>, </span><span class="parameter" id="delete-param-body"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">body</span>, </span><span class="parameter" id="delete-param-encoding"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-convert/Encoding-class.html">Encoding</a>?</span> <span class="parameter-name">encoding</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/http/0.13.4/http/Response-class.html">Response</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sends an HTTP DELETE request with the given headers to the given URL. <a href="https://pub.dev/documentation/http/0.13.4/http/delete.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="get" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/http/0.13.4/http/get.html">get</a></span><span class="signature">(<wbr><span class="parameter" id="get-param-url"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Uri-class.html">Uri</a></span> <span class="parameter-name">url</span>, </span><span class="parameter" id="get-param-headers">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">headers</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/http/0.13.4/http/Response-class.html">Response</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sends an HTTP GET request with the given headers to the given URL. <a href="https://pub.dev/documentation/http/0.13.4/http/get.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="head" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/http/0.13.4/http/head.html">head</a></span><span class="signature">(<wbr><span class="parameter" id="head-param-url"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Uri-class.html">Uri</a></span> <span class="parameter-name">url</span>, </span><span class="parameter" id="head-param-headers">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">headers</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/http/0.13.4/http/Response-class.html">Response</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sends an HTTP HEAD request with the given headers to the given URL. <a href="https://pub.dev/documentation/http/0.13.4/http/head.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="patch" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/http/0.13.4/http/patch.html">patch</a></span><span class="signature">(<wbr><span class="parameter" id="patch-param-url"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Uri-class.html">Uri</a></span> <span class="parameter-name">url</span>, </span><span class="parameter" id="patch-param-headers">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">headers</span>, </span><span class="parameter" id="patch-param-body"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">body</span>, </span><span class="parameter" id="patch-param-encoding"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-convert/Encoding-class.html">Encoding</a>?</span> <span class="parameter-name">encoding</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/http/0.13.4/http/Response-class.html">Response</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sends an HTTP PATCH request with the given headers and body to the given
+URL. <a href="https://pub.dev/documentation/http/0.13.4/http/patch.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="post" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/http/0.13.4/http/post.html">post</a></span><span class="signature">(<wbr><span class="parameter" id="post-param-url"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Uri-class.html">Uri</a></span> <span class="parameter-name">url</span>, </span><span class="parameter" id="post-param-headers">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">headers</span>, </span><span class="parameter" id="post-param-body"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">body</span>, </span><span class="parameter" id="post-param-encoding"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-convert/Encoding-class.html">Encoding</a>?</span> <span class="parameter-name">encoding</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/http/0.13.4/http/Response-class.html">Response</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sends an HTTP POST request with the given headers and body to the given URL. <a href="https://pub.dev/documentation/http/0.13.4/http/post.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="put" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/http/0.13.4/http/put.html">put</a></span><span class="signature">(<wbr><span class="parameter" id="put-param-url"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Uri-class.html">Uri</a></span> <span class="parameter-name">url</span>, </span><span class="parameter" id="put-param-headers">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">headers</span>, </span><span class="parameter" id="put-param-body"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">body</span>, </span><span class="parameter" id="put-param-encoding"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-convert/Encoding-class.html">Encoding</a>?</span> <span class="parameter-name">encoding</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/http/0.13.4/http/Response-class.html">Response</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sends an HTTP PUT request with the given headers and body to the given URL. <a href="https://pub.dev/documentation/http/0.13.4/http/put.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="read" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/http/0.13.4/http/read.html">read</a></span><span class="signature">(<wbr><span class="parameter" id="read-param-url"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Uri-class.html">Uri</a></span> <span class="parameter-name">url</span>, </span><span class="parameter" id="read-param-headers">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">headers</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sends an HTTP GET request with the given headers to the given URL and
+returns a Future that completes to the body of the response as a <a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a>. <a href="https://pub.dev/documentation/http/0.13.4/http/read.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="readBytes" class="callable">
+  <span class="name"><a href="https://pub.dev/documentation/http/0.13.4/http/readBytes.html">readBytes</a></span><span class="signature">(<wbr><span class="parameter" id="readBytes-param-url"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Uri-class.html">Uri</a></span> <span class="parameter-name">url</span>, </span><span class="parameter" id="readBytes-param-headers">{<span class="type-annotation"><a href="https://api.dart.dev/stable/2.16.2/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">headers</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.16.2/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.16.2/dart-typed_data/Uint8List-class.html">Uint8List</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sends an HTTP GET request with the given headers to the given URL and
+returns a Future that completes to the body of the response as a list of
+bytes. <a href="https://pub.dev/documentation/http/0.13.4/http/readBytes.html">[...]</a>
+  
+
+</dd>
+
+      </dl>
+    </section>
 
 
 
+    <section class="summary offset-anchor" id="exceptions">
+      <h2>Exceptions / Errors</h2>
 
+      <dl>
+        <dt id="ClientException">
+  <span class="name "><a href="https://pub.dev/documentation/http/0.13.4/http/ClientException-class.html">ClientException</a></span> 
 
+</dt>
+<dd>
+  An exception caused by an error in a pkg/http client. 
+</dd>
+
+      </dl>
+    </section>
 
   </div> <!-- /.main-content -->
 
@@ -105,15 +474,49 @@
     <h5>veryfi_dart library</h5>
     <ol>
   <li class="section-title"><a href="../veryfi_dart/veryfi_dart-library.html#classes">Classes</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/BaseClient-class.html">BaseClient</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/BaseRequest-class.html">BaseRequest</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/BaseResponse-class.html">BaseResponse</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/ByteStream-class.html">ByteStream</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">Client</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Digest-class.html">Digest</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hash-class.html">Hash</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/Hmac-class.html">Hmac</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/MultipartFile-class.html">MultipartFile</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/MultipartRequest-class.html">MultipartRequest</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/Request-class.html">Request</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/Response-class.html">Response</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/StreamedRequest-class.html">StreamedRequest</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/StreamedResponse-class.html">StreamedResponse</a></li>
   <li><a href="../veryfi_dart/VeryfiDart-class.html">VeryfiDart</a></li>
 
 
 
+  <li class="section-title"><a href="../veryfi_dart/veryfi_dart-library.html#constants">Constants</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/md5-constant.html">md5</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha1-constant.html">sha1</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha224-constant.html">sha224</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha256-constant.html">sha256</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha384-constant.html">sha384</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha512-constant.html">sha512</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha512224-constant.html">sha512224</a></li>
+  <li><a href="https://pub.dev/documentation/crypto/3.0.1/crypto/sha512256-constant.html">sha512256</a></li>
+
+
+  <li class="section-title"><a href="../veryfi_dart/veryfi_dart-library.html#functions">Functions</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/delete.html">delete</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/get.html">get</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/head.html">head</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/patch.html">patch</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/post.html">post</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/put.html">put</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/read.html">read</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/readBytes.html">readBytes</a></li>
 
 
 
-
-
+  <li class="section-title"><a href="../veryfi_dart/veryfi_dart-library.html#exceptions">Exceptions</a></li>
+  <li><a href="https://pub.dev/documentation/http/0.13.4/http/ClientException-class.html">ClientException</a></li>
 </ol>
 
   </div><!--/sidebar-offcanvas-right-->
@@ -123,7 +526,7 @@
 <footer>
   <span class="no-break">
     veryfi_dart
-      0.0.1
+      0.0.2
   </span>
 
   

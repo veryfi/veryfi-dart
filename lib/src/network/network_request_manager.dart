@@ -13,8 +13,6 @@ import 'package:crypto/crypto.dart';
 
 enum HTTPMethod { get, post, put, delete }
 
-enum APIPath { documents }
-
 class NetworkRequestManager {
   final VeryfiCredentials credentials;
   final String apiVersion;
@@ -25,17 +23,12 @@ class NetworkRequestManager {
   /// API request.
   ///
   /// Returns a [Map] with the response of the http request to the API
-  /// using the [method] [path] [queryItems] [body] and [queryItem]
+  /// using the [method] [path] [queryItems] and [body].
   /// to build and perform the request.
-  Future<Map<String, dynamic>> request(HTTPMethod method, APIPath path,
-      {Map<String, dynamic>? queryItems,
-      Map<String, dynamic>? body,
-      String? queryItem}) async {
+  Future<Map<String, dynamic>> request(HTTPMethod method, String path,
+      {Map<String, dynamic>? queryItems, Map<String, dynamic>? body}) async {
     final headers = getHeaders(body ?? {});
-    var encodedPath = "api/" + apiVersion + pathEnumToUrl(path);
-    if (queryItem != null && queryItem != "") {
-      encodedPath = encodedPath + queryItem + "/";
-    }
+    var encodedPath = "api/$apiVersion/partner/$path";
     final url = Uri.https(baseUrl, encodedPath, queryItems);
     switch (method) {
       case HTTPMethod.get:
@@ -67,17 +60,6 @@ class NetworkRequestManager {
     } else {
       throw VeryfiException(
           APIError.serverError, response.statusCode, json.toString());
-    }
-  }
-
-  /// Get API Paths.
-  ///
-  /// Returns a [String] containing the API path from the enum of
-  /// available API paths.
-  String pathEnumToUrl(APIPath path) {
-    switch (path) {
-      case APIPath.documents:
-        return '/partner/documents/';
     }
   }
 
