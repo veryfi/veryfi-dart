@@ -1,7 +1,7 @@
 ![Veryfi Logo](https://cdn.veryfi.com/logos/veryfi-logo-wide-github.png)
 
 ![Dart 2.16](https://img.shields.io/badge/Dart-2.16-orange.svg?style=flat)
-[![code coverage](.github/metrics/code_coverage.svg)](.github/metrics/code_coverage.svg)
+[![code coverage](https://raw.githubusercontent.com/veryfi/veryfi-dart/main/.github/metrics/code_coverage.svg)](https://raw.githubusercontent.com/veryfi/veryfi-dart/main/.github/metrics/code_coverage.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 Dart module for communicating with the Veryfi OCR API
