@@ -1,6 +1,8 @@
 //Veryfi imports
 import 'package:veryfi_dart/src/constants/constants.dart';
 import 'package:veryfi_dart/src/exception/veryfi_exception.dart';
+import 'package:veryfi_dart/src/model/add_line_item.dart';
+import 'package:veryfi_dart/src/model/update_line_item.dart';
 import 'package:veryfi_dart/veryfi_dart.dart';
 import 'veryfi_dart_test.mocks.dart';
 
@@ -248,12 +250,8 @@ void main() {
     });
 
     test('Test POST Lineitem', () async {
-      final Map<String, dynamic> body = {
-        'order': 20,
-        'description': 'Test',
-        'total': 44.4,
-        'sku': 'testsku'
-      };
+      final body = AddLineItem(20, 'Test', 44.0);
+      body.sku = 'testsku';
       if (mockResponses) {
         final String rawResponse =
             await File('test/resources/addLineItem.json').readAsString();
@@ -269,8 +267,8 @@ void main() {
           if (mockResponses) {
             assert(response.length >= 2);
           } else {
-            expect(response['total'], body['total']);
-            expect(response['description'], body['description']);
+            expect(response['total'], body.total);
+            expect(response['description'], body.description);
           }
         },
       ).catchError((error) {
@@ -280,7 +278,9 @@ void main() {
     test('Test PUT Lineitem', () async {
       Random random = Random();
       int randomNumber = random.nextInt(999);
-      final Map<String, dynamic> body = {'description': 'Test $randomNumber'};
+      final body = UpdateLineItem();
+      body.description = 'Test $randomNumber';
+
       if (mockResponses) {
         final String rawResponse =
             await File('test/resources/updateLineItem.json').readAsString();
@@ -299,7 +299,7 @@ void main() {
             assert(response.length >= 2);
           } else {
             expect(response['id'], lineItemId);
-            expect(response['description'], body['description']);
+            expect(response['description'], body.description);
           }
         },
       ).catchError((error) {
@@ -358,12 +358,8 @@ void main() {
 
     test('Test DELETE LineItem', () async {
       var lineItemIdToDelete = 0;
-      final Map<String, dynamic> body = {
-        'order': 20,
-        'description': 'Test',
-        'total': 44.4,
-        'sku': 'testsku'
-      };
+      final body = AddLineItem(20, 'Test', 44.4);
+      body.sku = 'testsku';
       if (mockResponses) {
         final String rawResponse =
             await File('test/resources/addLineItem.json').readAsString();

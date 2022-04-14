@@ -1,6 +1,6 @@
 name: veryfi_dart
 description: OCR API for Real-Time Data Extraction. This package contains a set of functions that make it easy to consume and communicate with the Veryfi OCR API.
-version: 0.0.3
+version: 0.0.4
 homepage: https://www.veryfi.com
 
 environment:

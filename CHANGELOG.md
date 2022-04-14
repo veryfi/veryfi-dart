@@ -9,3 +9,8 @@
 ## 0.0.3
 
 - Documentation updated.
+
+## 0.0.4
+
+- Improve line items support.
+
