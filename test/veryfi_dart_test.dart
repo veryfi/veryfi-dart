@@ -435,5 +435,22 @@ void main() {
       final signature = veryfiDart.generateSignature(params);
       assert(signature.isNotEmpty);
     });
+
+    test('Test Add Line Item to Map', () async {
+      final model = AddLineItem(20, 'desc', 44);
+      final map = model.toMap();
+      expect(model.order, map['order']);
+      expect(model.description, map['description']);
+      expect(model.total, map['total']);
+    });
+
+    test('Test Update Line Item to Map', () async {
+      final model = UpdateLineItem();
+      model.total = 20;
+      final map = model.toMap();
+      expect(model.total, map['total']);
+      expect(null, map['order']);
+      expect(null, map['description']);
+    });
   });
 }
