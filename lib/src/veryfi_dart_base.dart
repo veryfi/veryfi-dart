@@ -1,4 +1,6 @@
 //Veryfi imports
+import 'package:veryfi_dart/src/model/add_line_item.dart';
+import 'package:veryfi_dart/src/model/update_line_item.dart';
 import 'package:veryfi_dart/src/network/network_request_manager.dart';
 import 'package:veryfi_dart/src/model/veryfi_credentials.dart';
 
@@ -107,9 +109,9 @@ class VeryfiDart extends NetworkRequestManager {
   /// Returns a [Map] containing the new created line item from
   /// the [params] and added to the document with [documentId].
   Future<Map<String, dynamic>> addLineItem(
-      String documentId, Map<String, dynamic> params) {
+      String documentId, AddLineItem params) {
     return request(HTTPMethod.post, 'documents/$documentId/line-items/',
-        body: params);
+        body: params.toMap());
   }
 
   /// Update line item
@@ -117,10 +119,10 @@ class VeryfiDart extends NetworkRequestManager {
   /// Returns a [Map] containing the updated line item from
   /// the [params] and associated with [lineItemId] and [documentId].
   Future<Map<String, dynamic>> updateLineItem(
-      String documentId, String lineItemId, Map<String, dynamic> params) {
+      String documentId, String lineItemId, UpdateLineItem params) {
     return request(
         HTTPMethod.put, 'documents/$documentId/line-items/$lineItemId',
-        body: params);
+        body: params.toMap());
   }
 
   /// Delete document lineitems.
