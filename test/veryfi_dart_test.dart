@@ -91,7 +91,7 @@ void main() {
       await veryfiDart
           .processDocumentFromURL(
               fileUrl:
-                  'https://veryfi-testing-public.s3.us-west-2.amazonaws.com/receipt.jpg')
+                  'https://raw.githubusercontent.com/veryfi/veryfi-python/master/tests/assets/receipt_public.jpg')
           .then(
         (response) {
           assert(response['id'] != null);
@@ -167,11 +167,11 @@ void main() {
       await veryfiDart
           .processDocumentFromURL(
               fileUrl:
-                  'https://veryfi-testing-public.s3.us-west-2.amazonaws.com/receipt.jpg')
+                  'https://raw.githubusercontent.com/veryfi/veryfi-python/master/tests/assets/receipt_public.jpg')
           .then(
         (response) {
           expect(response['vendor']['name'].toString().toLowerCase(),
-              'in-n-out burger');
+              'Walgreens');
         },
       ).catchError((error) {
         assert(false);
@@ -198,7 +198,7 @@ void main() {
       await veryfiDart.processDocument(fileName, fileData).then(
         (response) {
           expect(response['vendor']['name'].toString().toLowerCase(),
-              'in-n-out burger');
+              'Walgreens');
         },
       ).catchError((error) {
         assert(false);
@@ -323,7 +323,7 @@ void main() {
       await veryfiDart
           .processDocumentFromURL(
               fileUrl:
-                  'https://veryfi-testing-public.s3.us-west-2.amazonaws.com/receipt.jpg')
+                  'https://raw.githubusercontent.com/veryfi/veryfi-python/master/tests/assets/receipt_public.jpg')
           .then(
         (response) {
           assert(response['id'] != null);
