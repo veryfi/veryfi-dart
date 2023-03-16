@@ -22,7 +22,7 @@ import 'package:test/test.dart';
 
 @GenerateMocks([http.Client])
 void main() {
-  const int documentId = 63480993;
+  const int documentId = 125661908;
   const int lineItemId = 190399931;
   const String clientId = 'clientId';
   const String clientSecret = 'clientSecret';
@@ -91,7 +91,7 @@ void main() {
       await veryfiDart
           .processDocumentFromURL(
               fileUrl:
-                  'https://veryfi-testing-public.s3.us-west-2.amazonaws.com/receipt.jpg')
+                  'https://raw.githubusercontent.com/veryfi/veryfi-python/master/tests/assets/receipt_public.jpg')
           .then(
         (response) {
           assert(response['id'] != null);
@@ -167,11 +167,11 @@ void main() {
       await veryfiDart
           .processDocumentFromURL(
               fileUrl:
-                  'https://veryfi-testing-public.s3.us-west-2.amazonaws.com/receipt.jpg')
+                  'https://raw.githubusercontent.com/veryfi/veryfi-python/master/tests/assets/receipt_public.jpg')
           .then(
         (response) {
           expect(response['vendor']['name'].toString().toLowerCase(),
-              'in-n-out burger');
+              'walgreens');
         },
       ).catchError((error) {
         assert(false);
@@ -179,7 +179,7 @@ void main() {
     });
 
     test('Test POST Document with File', () async {
-      final File file = File('test/resources/receipt.jpeg');
+      final File file = File('test/resources/receipt.jpg');
       const fileName = 'receipt.jpg';
       final Uint8List imageData = file.readAsBytesSync();
       String fileData = base64Encode(imageData);
@@ -198,7 +198,7 @@ void main() {
       await veryfiDart.processDocument(fileName, fileData).then(
         (response) {
           expect(response['vendor']['name'].toString().toLowerCase(),
-              'in-n-out burger');
+              'walgreens');
         },
       ).catchError((error) {
         assert(false);
@@ -323,7 +323,7 @@ void main() {
       await veryfiDart
           .processDocumentFromURL(
               fileUrl:
-                  'https://veryfi-testing-public.s3.us-west-2.amazonaws.com/receipt.jpg')
+                  'https://raw.githubusercontent.com/veryfi/veryfi-python/master/tests/assets/receipt_public.jpg')
           .then(
         (response) {
           assert(response['id'] != null);
