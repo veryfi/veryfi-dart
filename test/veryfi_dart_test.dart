@@ -171,7 +171,7 @@ void main() {
           .then(
         (response) {
           expect(response['vendor']['name'].toString().toLowerCase(),
-              'Walgreens');
+              'walgreens');
         },
       ).catchError((error) {
         assert(false);
@@ -198,7 +198,7 @@ void main() {
       await veryfiDart.processDocument(fileName, fileData).then(
         (response) {
           expect(response['vendor']['name'].toString().toLowerCase(),
-              'Walgreens');
+              'walgreens');
         },
       ).catchError((error) {
         assert(false);
