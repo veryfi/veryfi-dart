@@ -54,7 +54,10 @@ class NetworkRequestManager {
   /// available API paths.
   /// Throws a [VeryfiException] if there is an error.
   Map<String, dynamic> processResponse(Response response) {
-    final Map<String, dynamic> json = jsonDecode(response.body);
+    // The API sends JSON without a charset in the Content-Type header, and
+    // `response.body` would then decode it as Latin-1. JSON is always UTF-8.
+    final Map<String, dynamic> json =
+        jsonDecode(utf8.decode(response.bodyBytes, allowMalformed: true));
     if (response.statusCode == 200 || response.statusCode == 201) {
       return json;
     } else {

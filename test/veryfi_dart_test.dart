@@ -452,5 +452,26 @@ void main() {
       expect(null, map['order']);
       expect(null, map['description']);
     });
+
+    test('Test non-ASCII response is decoded as UTF-8', () async {
+      const name = 'Café مرحبا ١٢٣';
+      final mockClient = MockClient();
+      final client = VeryfiDart(clientId, clientSecret, username, apiKey);
+      client.injectMockHttpClient(mockClient);
+      // Like the API: JSON without a charset in the Content-Type header.
+      final response = http.Response.bytes(
+          utf8.encode(jsonEncode({
+            'id': documentId,
+            'vendor': {'name': name}
+          })),
+          200,
+          headers: {'content-type': 'application/json'});
+      when(mockClient.get(any, headers: anyNamed('headers')))
+          .thenAnswer((_) => Future(() => response));
+
+      final document = await client.getDocumentById('$documentId');
+
+      expect(document['vendor']['name'], name);
+    }, skip: !mockResponses);
   });
 }
