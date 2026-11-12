@@ -206,6 +206,55 @@ void main() {
     });
   });
 
+  group("Thinking -> ", () {
+    const receiptUrl =
+        'https://raw.githubusercontent.com/veryfi/veryfi-python/master/tests/assets/receipt_public.jpg';
+
+    /// Runs [call] against a mocked http client and returns the JSON body sent.
+    Future<Map<String, dynamic>> sentBody(
+        Future<Map<String, dynamic>> Function(VeryfiDart client) call) async {
+      final String rawResponse =
+          await File('test/resources/processDocument.json').readAsString();
+      final mockClient = MockClient();
+      final client = VeryfiDart(clientId, clientSecret, username, apiKey);
+      client.injectMockHttpClient(mockClient);
+      when(mockClient.post(any,
+              headers: anyNamed('headers'), body: anyNamed('body')))
+          .thenAnswer((_) => Future(() => http.Response(rawResponse, 200)));
+      await call(client);
+      final captured = verify(mockClient.post(any,
+              headers: anyNamed('headers'), body: captureAnyNamed('body')))
+          .captured;
+      return jsonDecode(captured.single as String) as Map<String, dynamic>;
+    }
+
+    for (final mode in ['light', 'deep']) {
+      test('Test POST Document with File sends thinking $mode', () async {
+        final body = await sentBody((client) =>
+            client.processDocument('receipt.jpg', 'ZGF0YQ==', thinking: mode));
+        expect(body['thinking'], mode);
+      }, skip: !mockResponses);
+
+      test('Test POST Document with URL sends thinking $mode', () async {
+        final body = await sentBody((client) => client
+            .processDocumentFromURL(fileUrl: receiptUrl, thinking: mode));
+        expect(body['thinking'], mode);
+      }, skip: !mockResponses);
+    }
+
+    test('Test POST Document with File without thinking', () async {
+      final body = await sentBody(
+          (client) => client.processDocument('receipt.jpg', 'ZGF0YQ=='));
+      expect(body.containsKey('thinking'), isFalse);
+    }, skip: !mockResponses);
+
+    test('Test POST Document with URL without thinking', () async {
+      final body = await sentBody(
+          (client) => client.processDocumentFromURL(fileUrl: receiptUrl));
+      expect(body.containsKey('thinking'), isFalse);
+    }, skip: !mockResponses);
+  });
+
   group("Line items -> ", () {
     test('Test GET Document lineitems', () async {
       if (mockResponses) {
