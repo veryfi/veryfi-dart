@@ -45,6 +45,11 @@ Future<void> processDocument() async {
 }
 ```
 
+Run thinking on the line items with `thinking` (`'light'` or `'deep'`; leave it `null` to turn it off). `processDocument` and `processDocumentFromURL` accept it, and `'deep'` takes longer than `'light'`. It only takes effect if thinking mode is enabled for your account.
+```dart
+await client.processDocument(fileName, fileData, thinking: 'light');
+```
+
 #### Update a document
 ```dart
 Future<void> updateDocument() async {

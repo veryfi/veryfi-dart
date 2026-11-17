@@ -49,6 +49,10 @@ class VeryfiDart extends NetworkRequestManager {
   ///
   /// Returns a [Map] containing the processed document information
   /// from the [fileUrl] or [fileUrls] using the desired or default options.
+  ///
+  /// Set [thinking] to `"light"` or `"deep"` (slower) to run an extra LLM pass
+  /// on the line items. Leave it `null` to turn it off. It needs thinking mode
+  /// enabled for your account.
   Future<Map<String, dynamic>> processDocumentFromURL(
       {String? fileUrl,
       List<String>? fileUrls,
@@ -56,7 +60,8 @@ class VeryfiDart extends NetworkRequestManager {
       bool deleteAfterProcessing = false,
       int boostMode = 0,
       String? externalId,
-      int maxPagesToProcess = 1}) {
+      int maxPagesToProcess = 1,
+      String? thinking}) {
     final Map<String, dynamic> body = {
       "auto_delete": deleteAfterProcessing,
       "boost_mode": boostMode,
@@ -66,6 +71,9 @@ class VeryfiDart extends NetworkRequestManager {
       "file_urls": fileUrls,
       "max_pages_to_process": maxPagesToProcess
     };
+    if (thinking != null) {
+      body['thinking'] = thinking;
+    }
     return request(HTTPMethod.post, 'documents', body: body);
   }
 
@@ -73,15 +81,23 @@ class VeryfiDart extends NetworkRequestManager {
   ///
   /// Returns a [Map] containing the processed document information
   /// from the [fileData] using the desired or default options.
+  ///
+  /// Set [thinking] to `"light"` or `"deep"` (slower) to run an extra LLM pass
+  /// on the line items. Leave it `null` to turn it off. It needs thinking mode
+  /// enabled for your account.
   Future<Map<String, dynamic>> processDocument(String fileName, String fileData,
       {List<String>? categories,
       bool deleteAfterProcessing = false,
-      Map<String, dynamic>? params}) {
+      Map<String, dynamic>? params,
+      String? thinking}) {
     final Map<String, dynamic> body = params ?? {};
     body['categories'] = categories ?? [];
     body['auto_delete'] = deleteAfterProcessing;
     body['file_data'] = fileData;
     body['file_name'] = fileName;
+    if (thinking != null) {
+      body['thinking'] = thinking;
+    }
 
     return request(HTTPMethod.post, 'documents', body: body);
   }
