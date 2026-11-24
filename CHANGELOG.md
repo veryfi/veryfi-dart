@@ -14,3 +14,8 @@
 
 - Improve line items support.
 
+## 0.1.0
+
+- Added the `thinking` parameter (Thinking Mode: `light` or `deep`).
+- Decode API responses as UTF-8.
+- Allow Dart 3 (SDK constraint `<4.0.0`).
